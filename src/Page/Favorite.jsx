@@ -8,7 +8,14 @@ function Favorite() {
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(storedFavorites);
-  }, []);  
+  }, []);
+
+  const handleRemoveMovie = (favMovie) => {
+    const filteredMovie = favorites.filter((movie) => movie.id !== favMovie.id);
+    setFavorites(filteredMovie);
+    const stringifyValue = JSON.stringify(filteredMovie);
+    localStorage.setItem("favorites", stringifyValue);
+  };
 
   return (
     <Grid container spacing={2} sx={{ minWidth: "100vw" }}>
@@ -29,7 +36,11 @@ function Favorite() {
       )}
       {favorites.map((movie) => (
         <Grid item xs={12} sm={6} md={4} lg={3} key={movie.id}>
-          <MovieCard movie={movie} isFavorite />
+          <MovieCard
+            movie={movie}
+            isFavorite
+            handleRemoveMovie={handleRemoveMovie}
+          />
         </Grid>
       ))}
     </Grid>
