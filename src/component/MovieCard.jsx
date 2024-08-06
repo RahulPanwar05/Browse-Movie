@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 
 const MovieCard = ({ movie, onAddToFavorites, isFavorite }) => {
-  
+
   const { title, poster_path, release_date } = movie;
   const releaseYear = release_date?.split("-")[0];
   const image = `https://image.tmdb.org/t/p/w500${poster_path}`;
@@ -17,8 +17,6 @@ const MovieCard = ({ movie, onAddToFavorites, isFavorite }) => {
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
-        height="140px"
-        width="200px"
         image={image}
         alt={title}
       />

@@ -67,11 +67,11 @@ function HomePage({ searchTerm }) {
     if (!favorites.some((fav) => fav.id === movie.id)) {
       favorites.push(movie);
       localStorage.setItem("favorites", JSON.stringify(favorites));
-      setAlertType("success")
+      setAlertType("success");
       setSnackbarMessage(`${movie.title} added to favorites.`);
       setSnackbarOpen(true);
     } else {
-      setAlertType("error")
+      setAlertType("error");
       setSnackbarMessage(`${movie.title} already added to favorite`);
       setSnackbarOpen(true);
     }
