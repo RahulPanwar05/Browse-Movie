@@ -1,4 +1,4 @@
-Project link - https://browse-movie.vercel.app/
+Project link - https://browse-movie-eyzl90669-rahulpanwar05s-projects.vercel.app/
 
 Prerequisite
 
